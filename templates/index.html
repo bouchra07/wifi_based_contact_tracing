@@ -1,0 +1,152 @@
+{% extends "home.html" %}
+{% block content %}
+
+{% if registered == True %}
+<br><br>
+{% endif %}
+
+<div id="small-width" class="card text-center border border-light p-5">
+
+
+{% if test == 'Positive' %}
+<form action="/negative" method="POST" enctype="multipart/form-data">
+  <div id="test-box" class="card text-center border border-light p-5">
+    <div id="margin-reduce" class="row">
+      <div class="col-md-8">
+        <p id ="margin-reduce" class="h5 mb-4">
+          Attention you have tested Positive!
+        </p>
+        <p id ="margin-reduce" class="h6 mb-4">
+          When you're covid free please don't forget to update your status by clicking on the button Negative
+        </p>
+      </div>
+      <div class="col-md-4">
+        <span style="margin-top: 10%;" class="material-icons">
+          update<button type="submit" class="text-center btn btn-light"> 
+        
+            Negative
+        </button>
+          </span>
+      
+    </div>
+  </div>
+  </div>
+</form>
+  {% endif %}
+
+  {% if test == 'Negative' %}
+<form action="/positive" method="POST" enctype="multipart/form-data">
+  <div id="negative-box" class="card text-center border border-light p-5">
+    <div id="margin-reduce" class="row">
+      <div class="col-md-8">
+        <p id ="margin-reduce" class="h5 mb-4">
+          Stay Safe and use COVID contact tracer
+        </p>
+        <p id ="margin-reduce" class="h6 mb-4">
+          If you test Covid positive please don't forget to update your status by clicking on the button "Positive" 
+        </p>
+
+      </div>
+      <div class="col-md-4">
+          <span style="margin-top: 10%;" class="material-icons">
+            warning<button type="submit" class="text-center btn btn-danger"> 
+              Positive
+          </button>
+            </span>
+      
+    </div>
+  </div>
+  </div>
+</form>
+  {% endif %}
+  {% if contact_count > 0  %}
+  <p style="margin-bottom: -2%; color: red; margin-top: 1%;">Warning! You have been exposed to a Covid-19 positive person!!!!!!</p>
+  {% endif %}
+  
+  <hr>
+    <form action="/check_network" method="POST" enctype="multipart/form-data">
+      <div style="margin-bottom: -2%;" class="row">
+        <div class="col-md-12">
+          <p class="text-left">Welcome to COVID-19 contact tracer! This application is made to let people be covid-19 free
+            and that is by letting the user scan each place he visits for covid-19 positive people that might have been
+           registered as positive into our database.</p>
+        </div>
+        
+      </div>
+      <hr>
+      <div style="margin-bottom: -2%;" class="row">
+        <div class="col-md-9">
+          <p class="text-left">Please everytime you connect to a new wifi remember to <b> do a scan </b> to save your sourroundings informations into 
+            our database. Click on the button in the right.
+          </p>
+        </div>
+        <div class="col-md-3">
+          <span class="material-icons">
+            person_search <button type="submit" class="btn btn-light">Scan</button>
+            </span>
+        
+      </div>
+      </div>
+    </form>
+    <hr>
+
+    <form action="/check_connections" method="POST" enctype="multipart/form-data">
+      <div style="margin-bottom: -2%;" class="row">
+        <div class="col-md-9">
+          <p class="text-left">If you want to check the list of <b>  the people you've made contact with </b>please click on the button in the right. </p>
+        </div>
+        <div class="col-md-3">
+          <span class="material-icons">
+            list <button type="submit" class="btn btn-light">Show</button>
+            </span>
+      </div>
+
+      </div>
+    </form>
+   
+
+  
+    <hr>
+
+    <form action="/check_covid_link" method="POST" enctype="multipart/form-data">
+      <div style="margin-bottom: -2%;" class="row">
+        <div class="col-md-9">
+          <p class="text-left">Please remember to do a regular scan for <b>contacts with covid-19 positive people</b> to be safe. 
+            To do that click on the button on your right. </p>
+        </div>
+        <div class="col-md-3">
+          <span class="material-icons">
+            list <button type="submit" class="btn btn-light">Show</button>
+            </span>
+      </div>
+      </div>
+    </form>
+
+    {% if registered == False %}
+    <hr>
+    <form action="/register" method="POST" enctype="multipart/form-data">
+      <div style="margin-bottom: -2%;" class="row">
+        <div class="col-md-7">
+          <p class="text-left">You are not registered in our Database please do register!</p>
+        </div>
+        <div class="col-md-5">
+          <span class="material-icons">
+            person_add <button type="submit" class="form-control btn btn-danger">Register</button>
+            </span>
+        </div>
+      </div>
+
+        
+    </form>
+    
+    {% endif %}
+    <hr>
+    <div style="margin-bottom: -2%;" >
+      <p style="margin-bottom: -2%;">STAY SAFE, STAY HOME!</p>
+    </div>
+    
+
+    
+
+</div>
+{% endblock %}

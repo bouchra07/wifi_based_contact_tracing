@@ -1,0 +1,40 @@
+{% extends "home.html" %}
+{% block content %}
+
+
+
+<br><br><br><br><br>
+<div id="small-width" class="card small-width text-center border border-light p-5">
+    <p class="h4 mb-4">Covid-19 Contact Tracing</p>
+    <hr>
+
+
+<form action="/signup" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Full Name</label>
+        <input name="name" type="text" class="form-control" placeholder="Enter your full name">
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input name="phone" type="text" class="form-control" placeholder="Phone Number">
+      </div>
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+      <form action="/return" method="POST" enctype="multipart/form-data">
+        <div class="col-md-3">
+          <button type="submit" class="btn btn-dark">Cancel</button>
+        </div>
+        <div class="col-md-3"></div>
+      </form>
+
+      </div>
+  
+
+</div>
+
+{% endblock %}
+

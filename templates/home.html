@@ -1,0 +1,54 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+  
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel=icon href=static/favicon.png>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename = './syles/style.css') }}">
+    <title>Wifi Based Contact Tracing</title>
+    
+    
+  </head>
+  
+  <body style="background-color: #242222;">
+  
+    <div class="container center-container">  
+      {% for message in get_flashed_messages() %}
+      <div class="alert alert-success alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span
+            class="sr-only">Close</span></button>
+        {{ message }}
+      </div>
+      {% endfor %}
+
+      {% block content %}{% endblock %}
+      {% if error %}
+      <p class="error"><strong>Error:</strong> {{ error }}</p>
+      {% endif %}
+  
+    </div>
+  
+
+    <!-- <footer id="footer" class="bg-light text-center text-lg-start">
+      <div class="text-center p-3" style="background-color:grey">
+        © 2021 Made by Bouchra Ouahabi Alhassani
+      </div>
+    </footer> -->
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/97e12ce0f1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+  </body>
+  
+  
+  </html>

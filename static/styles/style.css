@@ -1,0 +1,37 @@
+#footer {
+  position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+body{
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+#small-width {
+  width: 60%;
+  margin-left: 20%;
+}
+
+#test-box{
+    background-color: rgb(219, 69, 69);
+    color: white;
+    margin-left: -5%;
+    margin-right: -5%;
+    margin-top: -6%;
+    margin-bottom: -0.5%;
+  }
+  #negative-box{
+    background-color: rgb(197, 191, 191);
+    margin-left: -5%;
+    margin-right: -5%;
+    margin-top: -6%;
+    margin-bottom: -0.5%;
+  }
+
+  #margin-reduce{
+    margin-top: -2%;
+    margin-bottom: -5%;
+    margin-right: -10%;
+    margin-left: -5%;
+  }

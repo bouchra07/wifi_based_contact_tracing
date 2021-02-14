@@ -1,0 +1,43 @@
+{% extends "home.html" %}
+{% block content %}
+
+<br><br>
+<div class="card small-width text-center border border-light p-5">
+
+    <p class="h4 mb-4">Full List of previous contacts</p>
+    <hr>
+    <p>Here you can find all the people you've came across previously at certain dates. Some of these people are not registered in our 
+        database, that is why their personal informations are not shown.
+    </p>
+
+    <table class="table">
+        <tr>
+            {% for col in column_names %}
+            <th>{{col}}</th>
+            {% endfor %}
+        </tr>
+        {% for row in row_data %}
+        <tr>
+            {% for col, row_ in zip(column_names, row) %}
+            <td>{{row_}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    
+    </table>
+
+    <form action="/return" method="POST" enctype="multipart/form-data">
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+          <button type="submit" class="btn btn-primary"> 
+              Go Back
+          </button>
+        </div>
+        <div class="col-md-3"></div>
+        </div>
+      </form>
+</div>
+
+
+{% endblock %}
